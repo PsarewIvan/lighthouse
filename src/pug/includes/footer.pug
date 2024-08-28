@@ -1,0 +1,36 @@
+block footer
+    include ../icons/icon-logo.pug
+    include ../icons/icon-wazapa.pug
+
+    footer.footer
+        .footer__wrapper
+            .footer__logo-block
+                .footer__icon-wrapper
+                    +icon-logo()
+                    +icon-wazapa('footer__logo-text')
+                .footer__logo-text © Wazapa 2020 - 2024
+            .footer__nav-block
+                .footer__list
+                    ul
+                        li
+                            a(href="/") О сервисе Wazapa
+                        li
+                            a(href="/") Блог
+                        li
+                            a(href="/") Инструкции
+                        li
+                            a(href="/") Политика конфиденциальности
+                .footer__list
+                    ul
+                        li
+                            a(href="/") Оферта
+                        li
+                            a(href="/") Реквизиты
+                        li
+                            a(href="/") Процесс оплаты с помощью банковской карты
+                .footer__list
+                    ul
+                        li
+                            a(href="/") +7 (977) 805 98 28
+                        li
+                            a(href="/") info@wazapa.ru

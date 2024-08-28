@@ -1,0 +1,22 @@
+// font-family
+$roboto: 'Roboto', 'arial', sans-serif;
+$montserrat: 'Montserrat', 'arial', sans-serif;
+
+// media-queries
+$desktop: 'screen and (max-width: 1240px)';
+$onlysmalldesktop: 'screen and (min-width: 1025px) and (max-width: 1149px)';
+$tablet: 'screen and (max-width: 1024px)';
+$phone: 'screen and (max-width: 767px)';
+$smallphone: 'screen and (max-width: 340px)';
+
+@mixin tablet {
+    @media (max-width: 1055px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: 767px) {
+        @content;
+    }
+}

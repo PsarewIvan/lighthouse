@@ -1,0 +1,46 @@
+@import 'reset';
+@import 'fonts';
+@import 'vars';
+
+@import './components/button';
+
+@import './includes/header';
+@import './includes/footer';
+
+@import './pages/index';
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+    min-height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: $roboto;
+    line-height: 24px;
+    color: #272a2a;
+    background-color: #141415;
+    background-image: url('../images/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.transparent {
+    opacity: 0 !important;
+}
+
+.body-lock {
+    overflow: hidden;
+}

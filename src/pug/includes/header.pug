@@ -1,0 +1,21 @@
+block header
+    include ../icons/icon-logo.pug
+    include ../icons/icon-wazapa.pug
+    include ../components/button.pug
+
+    header.header
+        .header__logo-block
+            +icon-logo()
+            +icon-wazapa('header__logo-text')
+        nav.nav
+            ul.nav__list
+                li.nav__element
+                    a.nav__link(href='#') Команда
+                li.nav__element
+                    a.nav__link(href='#') Функции
+                li.nav__element
+                    a.nav__link(href='#') Сообщения
+                li.nav__element
+                    a.nav__link(href='#') Цены
+            a.nav__link(href='tel:+79778059828') +7 (977) 805 98 28
+        +button('Войти', 'l', 'secondary', 'header__auth')

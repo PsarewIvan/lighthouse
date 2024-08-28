@@ -1,0 +1,250 @@
+extends ../layout.pug
+
+block variables
+  - var page = 'index'
+
+include ../icons/icon-circle-s.pug
+include ../icons/icon-circle-m.pug
+include ../icons/icon-arrow-left.pug
+include ../icons/icon-arrow-right.pug
+include ../icons/icon-star.pug
+include ../icons/icon-step-arrow-1.pug
+include ../icons/icon-step-arrow-2.pug
+include ../icons/icon-question.pug
+include ../icons/icon-chevron.pug
+include ../components/button.pug
+
+block content
+        main.main
+            .preview
+                .content.preview-content
+                    img.preview-content__img(src="../images/lighthouse.png")
+                    .preview-content__content
+                        .preview-content__list
+                            .preview-content__list-element Работает в любой CRM
+                            .preview-content__list-element Для бизнеса салонов красоты
+                        .preview-content__text
+                            h1.preview-content__text-title Команда виртуальных помощников «Маяк»
+                            span Увеличь прибыль без увеличения штата
+                        .preview-content__footer
+                            +button('Подключи и протестируй бесплатно', 'l', 'primary', 'preview-content__footer-button')
+                            .preview-content__footer-label 7 дней пробный период
+                .content.main-text Команда виртуальных помощников будет каждую секунду стоять на страже интересов вашего бизнеса, без отдыха работая над его процветанием
+                .content.messages
+                    +icon-circle-s('messages__circle-s')
+                    +icon-circle-m('messages__circle-m')
+                    ul.messages__avatars-list
+                        li.messages__avatar-element
+                            button.messages__avatar-button.selected
+                                img.messages__avatar-img(src='../images/avatar-lookout.png')
+                                img.messages__avatar-shadow(src='../images/shadow-circle.png')
+                        li.messages__avatar-element
+                            button.messages__avatar-button
+                                img.messages__avatar-img(src='../images/avatar-guardian.png')
+                                img.messages__avatar-shadow.hidden(src='../images/shadow-circle.png')
+                        li.messages__avatar-element
+                            button.messages__avatar-button
+                                img.messages__avatar-img(src='../images/avatar-builder.png')
+                                img.messages__avatar-shadow.hidden(src='../images/shadow-circle.png')
+                        li.messages__avatar-element
+                            button.messages__avatar-button
+                                img.messages__avatar-img(src='../images/avatar-analyst.png')
+                                img.messages__avatar-shadow.hidden(src='../images/shadow-circle.png')
+                        li.messages__avatar-element
+                            button.messages__avatar-button
+                                img.messages__avatar-img(src='../images/avatar-trainer.png')
+                                img.messages__avatar-shadow.hidden(src='../images/shadow-circle.png')
+                    ul.messages__buttons-list
+                        .messages__buttons-list-block
+                            li.messages__button-element
+                                button.messages__button.selected Дозорный
+                            li.messages__button-element
+                                button.messages__button Хранитель
+                        .messages__buttons-list-block
+                            li.messages__button-element
+                                button.messages__button Строитель
+                            li.messages__button-element
+                                button.messages__button Аналитик
+                            li.messages__button-element
+                                button.messages__button Тренер
+                    .slider
+                        .slider__slide
+                            .slide__img-block
+                                img.slide__img(src='images/characters-lookout.png')
+                            .slide__content
+                                .slide__title Дозорный
+                                .slide__sub-title Мониторит текущие события и мгновенно оповестит вас, если:
+                                ul.slide__list
+                                    li.slide__list-element Сотрудник отменит запись без перезаписи клиента на другое время
+                                    li.slide__list-element Клиент отменит запись без переноса на другое время
+                                    li.slide__list-element Сотрудник откроет ранее оформленный визит
+                                    li.slide__list-element Сотрудник изменит стоимость, состав услуг или товаров в визите
+                                    li.slide__list-element При получении отрицательного отзыва
+                        .slider__controls
+                            button.slider__controls-button(type='button')
+                                +icon-arrow-left('slider__controls-button-icon')
+                                span Тренер
+                            .slider__pagination
+                                button(type='').slider__pagination-item.selected
+                                button(type='').slider__pagination-item
+                                button(type='').slider__pagination-item
+                                button(type='').slider__pagination-item
+                                button(type='').slider__pagination-item
+                            button.slider__controls-button(type='button')
+                                span Хранитель
+                                +icon-arrow-right('slider__controls-button-icon')
+            .functions
+                .content
+                    .functions__title-block
+                        h2.functions__title Самые популярные функции
+                        .functions__text Все помощники стоят на страже вашего бизнеса и при ситуациях тут же оповещают вас через Telegram
+                        a.functions__link(href="/") Все функции помощников
+                    .functions__content
+                        .functions__content-block
+                            .functions__content-title Отмена визита
+                            .functions__content-text В случае отмены визита сотрудником, или самим клиентом помощник уведомит вас об этом и укажет причины отмены
+                        .functions__content-block
+                            .functions__content-title Поступил плохой отзыв
+                            .functions__content-text Помощник расскажет вам, если клиент оставит негативный отзыв о визите
+                            .functions__content-stars
+                                .functions__content-stars-block
+                                    +icon-star('functions__content-star selected')
+                                    +icon-star('functions__content-star')
+                                    +icon-star('functions__content-star')
+                                    +icon-star('functions__content-star')
+                                    +icon-star('functions__content-star')
+                                .functions__content-stars-text 1/5
+                        .functions__content-block
+                            .functions__content-title Администратор не пробил чек
+                        .functions__content-block
+                            .functions__content-title Уменьшилась сумма визита
+                            .functions__content-text Если при оформлении в визите будет удалены товар или услуга, и/или заменены на более дешевые, помощник это не упустит и расскажет вам обо всех потерях
+                            .functions__content-price
+                                span 4 750 ₽
+                                span 2500 ₽
+                    .functions__buttons
+                        +button('Подключи и протестируй бесплатно', 'l', 'primary', 'functions__buttons-button')
+                        .functions__button-label 7 дней пробный период
+
+            .phone
+                .content.phone__wrapper
+                    .phone__content
+                        h2.phone__title Какие сообщения присылает команда?
+                        ul.phone__list
+                            li.phone__list-item.selected
+                                .phone__list-item-block
+                                    .phone__list-item-title Оформление записей
+                                    .phone__list-item-text Контролируем указания номера телефона клиента, наличия услуг, выдачу чека, напоминания о новой записи в будущее и внесение изменений в ранее оформленные визиты
+                                .phone__list-item-arrow-block
+                                    +icon-arrow-right('phone__list-item-arrow')
+                            li.phone__list-item
+                                .phone__list-item-block
+                                    .phone__list-item-title Изменение записей
+                                    .phone__list-item-text Контролируем переносы и отмены записей с указанием причин
+                                .phone__list-item-arrow-block
+                                    +icon-arrow-right('phone__list-item-arrow')
+                            li.phone__list-item
+                                .phone__list-item-block
+                                    .phone__list-item-title Отзывы клиентов
+                                    .phone__list-item-text Контролируем получение негативных отзывов клиентов
+                                .phone__list-item-arrow-block
+                                    +icon-arrow-right('phone__list-item-arrow')
+                            li.phone__list-item
+                                .phone__list-item-block
+                                    .phone__list-item-title Продажи товаров
+                                    .phone__list-item-text Контролируем корректность и полноту указанной информации
+                                .phone__list-item-arrow-block
+                                    +icon-arrow-right('phone__list-item-arrow')
+                    .phone__img-block.first
+
+            .prices
+                .content.prices__wrapper
+                    h2.prices__title Сколько стоит работа команды?
+                    .prices__sub-title Наши помощники не спят, им не нужен соц. пакет, корпоративные обеды, выходные и больничные
+                    .prices__tabs.tabs
+                        button.tabs__tab.selected(type='button') 1 точка контроля
+                        button.tabs__tab(type='button') 3 точки контроля
+                        button.tabs__tab(type='button') Безлимитный
+                    .prices__price-block
+                        .prices__price
+                            span 100
+                            span ₽
+                            span  в месяц
+                        .prices__price-label оплата за год, всего 1200 рублей
+                    .prices__buttons
+                        +button('Подключи и протестируй бесплатно', 'l', 'primary', 'prices__button')
+                        .prices__buttons-label 7 дней пробный период
+                    h2.prices__title Быстрый старт в три шага
+                    .prices__sub-title На знакомство с вашим бизнесом у команды уйдёт всего 5 минут
+                    .prices__steps
+                        .prices__step
+                            +icon-step-arrow-1('prices__step-icon-1')
+                            .prices__step-count 1
+                            .prices__step-title Подключайте
+                            .prices__step-text Зайдите в маркет своей CRM и подключите приложение Wazapa*
+                        .prices__step
+                            +icon-step-arrow-2('prices__step-icon-2')
+                            .prices__step-count 2
+                            .prices__step-title Активируйте
+                            .prices__step-text В личном кабинете Wazapa в разделе Бот «Маяк» активируйте его нажав на кнопку «Попробовать бесплатно»
+                        .prices__step
+                            .prices__step-count 3
+                            .prices__step-title Стартуйте
+                            .prices__step-text В своем Telegram в боте Mayak нажмите «Старт» и получайте сообщения от команды Маяка
+                    .prices__footer
+                        span * Если в вашей CRM нет маркета, 
+                        a(href="/") отправьте нам
+                        span  название своего салона, и CRM и мы вас подключим через API
+
+            .questions
+                .content.questions__wrapper
+                    .questions__block-a
+                        h2.questions__title Часто задаваемые вопросы
+                        .questions__text Наш сервис разработан с фокусом на простоту и удобство использования. Если у вас вдруг возникнут вопросы в процессе работы, здесь собраны несколько полезных подсказок.
+                        button.questions__button(type='button')
+                            +icon-question('questions__button-icon')
+                            span Остались вопросы
+                    .questions__block-b
+                        .accordion.js-accordion
+                            .accordion__item
+                                .accordion__header.js-accordion-header
+                                    span В какой CRM можно подключить «Маяк»?
+                                    .accordion__header-icon-wrapper
+                                        +icon-chevron('accordion__header-icon')
+                                .accordion__body
+                                    .accordion__content Наш сервис можно подключить в любой CRM-системе, так как мы обеспечиваем интеграцию с помощью API. Большинство популярных CRM имеют готовую интеграцию с нашим сервисом, но даже если ее нет, мы сможем помочь с подключением при наличии API у вашей CRM.
+                            .accordion__item
+                                .accordion__header.js-accordion-header
+                                    span Сколько времени занимает процесс подключения?
+                                    .accordion__header-icon-wrapper
+                                        +icon-chevron('accordion__header-icon')
+                                .accordion__body
+                                    .accordion__content Наш сервис можно подключить в любой CRM-системе, так как мы обеспечиваем интеграцию с помощью API. Большинство популярных CRM имеют готовую интеграцию с нашим сервисом, но даже если ее нет, мы сможем помочь с подключением при наличии API у вашей CRM.
+                            .accordion__item
+                                .accordion__header.js-accordion-header
+                                    span Сколько номеров телефона можно подключить одновременно?
+                                    .accordion__header-icon-wrapper
+                                        +icon-chevron('accordion__header-icon')
+                                .accordion__body
+                                    .accordion__content Наш сервис можно подключить в любой CRM-системе, так как мы обеспечиваем интеграцию с помощью API. Большинство популярных CRM имеют готовую интеграцию с нашим сервисом, но даже если ее нет, мы сможем помочь с подключением при наличии API у вашей CRM.
+                            .accordion__item
+                                .accordion__header.js-accordion-header
+                                    span Можно ли докупить дополнительные точки контроля?
+                                    .accordion__header-icon-wrapper
+                                        +icon-chevron('accordion__header-icon')
+                                .accordion__body
+                                    .accordion__content Наш сервис можно подключить в любой CRM-системе, так как мы обеспечиваем интеграцию с помощью API. Большинство популярных CRM имеют готовую интеграцию с нашим сервисом, но даже если ее нет, мы сможем помочь с подключением при наличии API у вашей CRM.
+                            .accordion__item
+                                .accordion__header.js-accordion-header
+                                    span Как можно связаться с технической поддержкой?
+                                    .accordion__header-icon-wrapper
+                                        +icon-chevron('accordion__header-icon')
+                                .accordion__body
+                                    .accordion__content Наш сервис можно подключить в любой CRM-системе, так как мы обеспечиваем интеграцию с помощью API. Большинство популярных CRM имеют готовую интеграцию с нашим сервисом, но даже если ее нет, мы сможем помочь с подключением при наличии API у вашей CRM.
+
+            //- .form
+            //-     .content.form__wrapper
+            //-         h2.form__title Команда помощников готова к работе!
+            //-         .form__subtitle Семидневный пробный период позволит вам оценить все преимущества работы с помощниками
+            //-         form(action="")
+
