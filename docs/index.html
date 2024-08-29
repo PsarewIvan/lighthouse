@@ -249,7 +249,7 @@
           <div class="phone__content">
             <h2 class="phone__title">Какие сообщения присылает команда?</h2>
             <ul class="phone__list">
-              <li class="phone__list-item selected">
+              <li class="phone__list-item js-messages-item selected">
                 <div class="phone__list-item-block">
                   <div class="phone__list-item-title">Оформление записей</div>
                   <div class="phone__list-item-text">Контролируем указания номера телефона клиента, наличия услуг, выдачу чека, напоминания о новой записи в будущее и внесение изменений в ранее оформленные визиты</div>
@@ -260,7 +260,7 @@
                   </svg>
                 </div>
               </li>
-              <li class="phone__list-item">
+              <li class="phone__list-item js-messages-item">
                 <div class="phone__list-item-block">
                   <div class="phone__list-item-title">Изменение записей</div>
                   <div class="phone__list-item-text">Контролируем переносы и отмены записей с указанием причин</div>
@@ -271,7 +271,7 @@
                   </svg>
                 </div>
               </li>
-              <li class="phone__list-item">
+              <li class="phone__list-item js-messages-item">
                 <div class="phone__list-item-block">
                   <div class="phone__list-item-title">Отзывы клиентов</div>
                   <div class="phone__list-item-text">Контролируем получение негативных отзывов клиентов</div>
@@ -282,7 +282,7 @@
                   </svg>
                 </div>
               </li>
-              <li class="phone__list-item">
+              <li class="phone__list-item js-messages-item">
                 <div class="phone__list-item-block">
                   <div class="phone__list-item-title">Продажи товаров</div>
                   <div class="phone__list-item-text">Контролируем корректность и полноту указанной информации</div>
@@ -295,7 +295,7 @@
               </li>
             </ul>
           </div>
-          <div class="phone__img-block first"></div>
+          <div class="phone__img-block js-messages-image first"></div>
         </div>
       </div>
       <div class="prices">
@@ -303,12 +303,12 @@
           <h2 class="prices__title">Сколько стоит работа команды?</h2>
           <div class="prices__sub-title">Наши помощники не спят, им не нужен соц. пакет, корпоративные обеды, выходные и больничные</div>
           <div class="prices__tabs tabs">
-            <button class="tabs__tab selected" type="button">1 точка контроля</button>
-            <button class="tabs__tab" type="button">3 точки контроля</button>
-            <button class="tabs__tab" type="button">Безлимитный</button>
+            <button class="tabs__tab js-prices-button selected" type="button" data-price="100">1 точка контроля</button>
+            <button class="tabs__tab js-prices-button" type="button" data-price="1 000">3 точки контроля</button>
+            <button class="tabs__tab js-prices-button" type="button" data-price="2 000">Безлимитный</button>
           </div>
           <div class="prices__price-block">
-            <div class="prices__price"><span>100</span><span>₽</span><span> в месяц</span></div>
+            <div class="prices__price"><span class="js-prices-count">100</span><span> ₽</span><span> в месяц</span></div>
             <div class="prices__price-label">оплата за год, всего 1200 рублей</div>
           </div>
           <div class="prices__buttons">

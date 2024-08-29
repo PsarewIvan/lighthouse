@@ -175,44 +175,44 @@ block content
                     .phone__content
                         h2.phone__title Какие сообщения присылает команда?
                         ul.phone__list
-                            li.phone__list-item.selected
+                            li.phone__list-item.js-messages-item.selected
                                 .phone__list-item-block
                                     .phone__list-item-title Оформление записей
                                     .phone__list-item-text Контролируем указания номера телефона клиента, наличия услуг, выдачу чека, напоминания о новой записи в будущее и внесение изменений в ранее оформленные визиты
                                 .phone__list-item-arrow-block
                                     +icon-arrow-right('phone__list-item-arrow')
-                            li.phone__list-item
+                            li.phone__list-item.js-messages-item
                                 .phone__list-item-block
                                     .phone__list-item-title Изменение записей
                                     .phone__list-item-text Контролируем переносы и отмены записей с указанием причин
                                 .phone__list-item-arrow-block
                                     +icon-arrow-right('phone__list-item-arrow')
-                            li.phone__list-item
+                            li.phone__list-item.js-messages-item
                                 .phone__list-item-block
                                     .phone__list-item-title Отзывы клиентов
                                     .phone__list-item-text Контролируем получение негативных отзывов клиентов
                                 .phone__list-item-arrow-block
                                     +icon-arrow-right('phone__list-item-arrow')
-                            li.phone__list-item
+                            li.phone__list-item.js-messages-item
                                 .phone__list-item-block
                                     .phone__list-item-title Продажи товаров
                                     .phone__list-item-text Контролируем корректность и полноту указанной информации
                                 .phone__list-item-arrow-block
                                     +icon-arrow-right('phone__list-item-arrow')
-                    .phone__img-block.first
+                    .phone__img-block.js-messages-image.first
 
             .prices
                 .content.prices__wrapper(id='prices')
                     h2.prices__title Сколько стоит работа команды?
                     .prices__sub-title Наши помощники не спят, им не нужен соц. пакет, корпоративные обеды, выходные и больничные
                     .prices__tabs.tabs
-                        button.tabs__tab.selected(type='button') 1 точка контроля
-                        button.tabs__tab(type='button') 3 точки контроля
-                        button.tabs__tab(type='button') Безлимитный
+                        button.tabs__tab.js-prices-button.selected(type='button' data-price='100') 1 точка контроля
+                        button.tabs__tab.js-prices-button(type='button' data-price='1 000') 3 точки контроля
+                        button.tabs__tab.js-prices-button(type='button' data-price='2 000') Безлимитный
                     .prices__price-block
                         .prices__price
-                            span 100
-                            span ₽
+                            span.js-prices-count 100
+                            span  ₽
                             span  в месяц
                         .prices__price-label оплата за год, всего 1200 рублей
                     .prices__buttons
