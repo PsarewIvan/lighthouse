@@ -56,8 +56,6 @@
 
     function overlayClose(element) {
         return (evt) => {
-            console.log(evt.target, element);
-
             if (evt.target === element) {
                 closePopup(element)();
             }

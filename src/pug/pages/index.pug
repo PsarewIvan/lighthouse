@@ -29,7 +29,7 @@ block content
                             h1.preview-content__text-title Команда виртуальных помощников «Маяк»
                             span Увеличь прибыль без увеличения штата
                         .preview-content__footer
-                            +button('Подключи и протестируй бесплатно', 'l', 'primary', 'preview-content__footer-button js-login-button')
+                            +button('Подключи и протестируй бесплатно', 'l', 'primary', 'preview-content__footer-button js-login-button js-login-button-rename')
                             .preview-content__footer-label 7 дней пробный период
                 .content.main-text Команда виртуальных помощников будет каждую секунду стоять на страже интересов вашего бизнеса, без отдыха работая над его процветанием
                 .content.messages
@@ -76,6 +76,7 @@ block content
                                 .slider__slide.itc-slider-item
                                     .slide__img-block
                                         img.slide__img(src='images/characters-lookout.png')
+                                        img.slide__img-mobile(src='images/avatar-lookout.png')
                                     .slide__content
                                         .slide__title Дозорный
                                         .slide__sub-title Мониторит текущие события и мгновенно оповестит вас, если:
@@ -88,6 +89,7 @@ block content
                                 .slider__slide.itc-slider-item
                                     .slide__img-block
                                         img.slide__img(src='images/characters-guardian.png')
+                                        img.slide__img-mobile(src='images/avatar-guardian.png')
                                     .slide__content
                                         .slide__title Хранитель
                                         .slide__sub-title Охраняет вашу кассу и мгновенно оповестит вас, если:
@@ -98,6 +100,7 @@ block content
                                 .slider__slide.itc-slider-item
                                     .slide__img-block
                                         img.slide__img(src='images/characters-builder.png')
+                                        img.slide__img-mobile(src='images/avatar-builder.png')
                                     .slide__content
                                         .slide__title Строитель
                                         .slide__sub-title Работает над увеличением записей в будущем и над эффективным ведением базы. Он сообщит вам, если:
@@ -109,6 +112,7 @@ block content
                                 .slider__slide.itc-slider-item
                                     .slide__img-block
                                         img.slide__img(src='images/characters-analyst.png')
+                                        img.slide__img-mobile(src='images/avatar-analyst.png')
                                     .slide__content
                                         .slide__title Аналитик
                                         .slide__sub-title Анализирует  работу салона и:
@@ -118,6 +122,7 @@ block content
                                 .slider__slide.itc-slider-item
                                     .slide__img-block
                                         img.slide__img(src='images/characters-trainer.png')
+                                        img.slide__img-mobile(src='images/avatar-trainer.png')
                                     .slide__content
                                         .slide__title Тренер
                                         .slide__sub-title Заботится о развитии вашего бизнеса и улучшении показателей:
@@ -167,7 +172,7 @@ block content
                                 span 4 750 ₽
                                 span 2500 ₽
                     .functions__buttons
-                        +button('Подключи и протестируй бесплатно', 'l', 'primary', 'functions__buttons-button js-login-button')
+                        +button('Подключи и протестируй бесплатно', 'l', 'primary', 'functions__buttons-button js-login-button js-login-button-rename')
                         .functions__button-label 7 дней пробный период
 
             .phone
@@ -216,7 +221,7 @@ block content
                             span  в месяц
                         .prices__price-label оплата за год, всего 1200 рублей
                     .prices__buttons
-                        +button('Подключи и протестируй бесплатно', 'l', 'primary', 'prices__button js-login-button')
+                        +button('Подключи и протестируй бесплатно', 'l', 'primary', 'prices__button js-login-button js-login-button-rename')
                         .prices__buttons-label 7 дней пробный период
                     h2.prices__title Быстрый старт в три шага
                     .prices__sub-title На знакомство с вашим бизнесом у команды уйдёт всего 5 минут
@@ -293,7 +298,7 @@ block content
                     form.index-form(action="")
                         +text-input('', '', 'Телефон для связи', '', 'index-form__input-tel')
                         +text-input('', '', 'Название организации', '', 'index-form__input-name')
-                        +button('Отправить заявку на подключение', 'm', 'primary', 'index-form__button')
+                        +button('Отправить заявку на подключение', 'm', 'primary', 'index-form__button js-accept-button-rename')
                     .form__list
                         .form__list-item
                             +icon-ok('form__list-icon')
