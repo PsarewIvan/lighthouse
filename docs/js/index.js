@@ -98,11 +98,310 @@ class ItcAccordion {
 
 (() => {
     const accordions = document.querySelectorAll('.js-accordion');
-    console.log(accordions);
 
     accordions.forEach((accordion) => {
         new ItcAccordion(accordion, {
             alwaysOpen: true,
+        });
+    });
+})();
+
+(() => {
+    document.addEventListener('DOMContentLoaded', function () {
+        const offset = 140;
+
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const target = document.querySelector(
+                    this.getAttribute('href')
+                );
+                const targetPosition =
+                    target.getBoundingClientRect().top +
+                    window.scrollY -
+                    offset;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth',
+                });
+            });
+        });
+    });
+})();
+
+(() => {
+    const authButtons = document.querySelectorAll('.js-auth-button');
+
+    const popup = document.querySelector('.js-popup-auth');
+    const popupForgotPass = document.querySelector('.js-popup-forgot-pass');
+    const popupLogin = document.querySelector('.js-popup-login');
+    const popupSuccess = document.querySelector('.js-popup-success');
+
+    const closePopupButtons = document.querySelectorAll('.js-close-popup');
+    const forgotPassButtons = document.querySelectorAll(
+        '.js-auth-button-forgot'
+    );
+    const loginButtons = document.querySelectorAll('.js-login-button');
+    const successButtons = document.querySelectorAll('.js-success-button');
+
+    closePopupButtons.forEach((button) => {
+        button?.addEventListener('click', closeAllPopup);
+    });
+
+    authButtons.forEach((button) => {
+        button?.addEventListener('click', openPopup(popup));
+    });
+
+    forgotPassButtons.forEach((button) => {
+        button?.addEventListener('click', () => {
+            closeAllPopup();
+            openPopup(popupForgotPass)();
+        });
+    });
+
+    loginButtons.forEach((button) => {
+        button?.addEventListener('click', () => {
+            closeAllPopup();
+            openPopup(popupLogin)();
+        });
+    });
+
+    successButtons.forEach((button) => {
+        button?.addEventListener('click', () => {
+            closeAllPopup();
+            openPopup(popupSuccess)();
+        });
+    });
+
+    popup?.addEventListener('click', overlayClose(popup));
+    popupForgotPass?.addEventListener('click', overlayClose(popupForgotPass));
+    popupLogin?.addEventListener('click', overlayClose(popupLogin));
+    popupSuccess?.addEventListener('click', overlayClose(popupSuccess));
+
+    function closeAllPopup() {
+        closePopup(popup)();
+        closePopup(popupForgotPass)();
+        closePopup(popupLogin)();
+        closePopup(popupSuccess)();
+    }
+
+    function overlayClose(element) {
+        return (evt) => {
+            console.log(evt.target, element);
+
+            if (evt.target === element) {
+                closePopup(element)();
+            }
+        };
+    }
+
+    function openPopup(element) {
+        return () => {
+            element?.classList.remove('hidden');
+            element?.focus();
+            document.body.classList.add('body-lock');
+            trapFocus(element);
+        };
+    }
+
+    function closePopup(element) {
+        return () => {
+            element?.classList.add('hidden');
+            document.body.classList.remove('body-lock');
+        };
+    }
+
+    function trapFocus(element) {
+        const focusableElements = element?.querySelectorAll(
+            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+
+        if (element && focusableElements) {
+            const firstFocusableElement = focusableElements[0];
+            const lastFocusableElement =
+                focusableElements[focusableElements.length - 1];
+
+            element.addEventListener('keydown', function (e) {
+                const isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+
+                if (!isTabPressed) {
+                    return;
+                }
+
+                if (e.shiftKey) {
+                    if (document.activeElement === firstFocusableElement) {
+                        lastFocusableElement.focus();
+                        e.preventDefault();
+                    }
+                } else {
+                    if (document.activeElement === lastFocusableElement) {
+                        firstFocusableElement.focus();
+                        e.preventDefault();
+                    }
+                }
+            });
+        }
+    }
+})();
+
+(() => {
+    let hasTableInit = false;
+    let hasMobileInit = false;
+    let hasMenuOpen = false;
+
+    const burger = document.querySelector('.js-header-burger');
+    const nav = document.querySelector('.js-nav');
+    const user = document.querySelector('.js-nav-user');
+    const mobileActions = document.querySelector('.js-header-actions-mobile');
+
+    const header = document.querySelector('.js-header');
+    const content = document.getElementById('js-main-content');
+
+    burger?.addEventListener('click', onBurgerClick);
+
+    window.addEventListener('resize', initMobileTable);
+    initMobileTable();
+
+    function initMobileTable() {
+        if (window.innerWidth < 1200) {
+            const headerRect = header?.getBoundingClientRect();
+
+            if (!hasTableInit) {
+                nav?.classList.add('hidden');
+            }
+
+            if (content?.stye && headerRect) {
+                content.stye.marginTop = `${headerRect.height}px`;
+            }
+
+            hasTableInit = true;
+        } else if (hasTableInit) {
+            nav?.classList.remove('hidden');
+            hasTableInit = false;
+        }
+
+        if (window.innerWidth < 768) {
+            if (!hasMobileInit) {
+                user?.classList.add('hidden');
+                mobileActions?.classList.remove('hidden');
+            }
+
+            hasMobileInit = true;
+        } else if (hasMobileInit) {
+            user?.classList.remove('hidden');
+            mobileActions?.classList.add('hidden');
+            hasMobileInit = false;
+        }
+    }
+
+    function onBurgerClick() {
+        if (hasMenuOpen) {
+            hasMenuOpen = false;
+            nav?.classList.add('hidden');
+            user?.classList.add('hidden');
+            burger?.classList.remove('open');
+            document.body.classList.remove('body-lock');
+        } else {
+            hasMenuOpen = true;
+            nav?.classList.remove('hidden');
+            user?.classList.remove('hidden');
+            burger?.classList.add('open');
+            document.body.classList.add('body-lock');
+        }
+    }
+})();
+
+(() => {
+    const ACTIVE_CLASS = 'active';
+
+    const nodes = document.querySelectorAll('.js-pass-input-node');
+
+    nodes.forEach((node) => {
+        const input = node.querySelector('.js-pass-input');
+        const show = node.querySelector('.js-pass-input-show');
+        const openIcon = node.querySelector('.js-pass-input-icon-open');
+        const closedIcon = node.querySelector('.js-pass-input-icon-closed');
+        const reset = node.querySelector('.js-pass-input-reset');
+        const alert = node.querySelector('.js-pass-input-alert');
+
+        show?.addEventListener('click', () => {
+            const type = input?.getAttribute('type');
+
+            if (type === 'password') {
+                input.setAttribute('type', 'text');
+                openIcon?.classList.remove('hidden');
+                closedIcon?.classList.add('hidden');
+            } else {
+                input.setAttribute('type', 'password');
+                openIcon?.classList.add('hidden');
+                closedIcon?.classList.remove('hidden');
+            }
+        });
+
+        input?.addEventListener('blur', (event) => {
+            if (event.target.value === '') {
+                alert?.classList.add(ACTIVE_CLASS);
+            } else {
+                alert?.classList.remove(ACTIVE_CLASS);
+            }
+        });
+
+        input?.addEventListener('input', (event) => {
+            if (event.target.value === '') {
+                reset?.classList.remove(ACTIVE_CLASS);
+            } else {
+                reset?.classList.add(ACTIVE_CLASS);
+                alert?.classList.remove(ACTIVE_CLASS);
+            }
+        });
+
+        reset?.addEventListener('click', () => {
+            if (input) {
+                input.value = '';
+                reset?.classList.remove(ACTIVE_CLASS);
+            }
+        });
+    });
+})();
+
+(() => {
+    const ACTIVE_CLASS = 'active';
+
+    const nodes = document.querySelectorAll('.js-text-input-node');
+
+    nodes.forEach((node) => {
+        const input = node.querySelector('.js-text-input');
+        const reset = node.querySelector('.js-text-input-reset');
+        const alert = node.querySelector('.js-text-input-alert');
+
+        if (input.value !== '') {
+            reset?.classList.add(ACTIVE_CLASS);
+        }
+
+        input?.addEventListener('blur', (event) => {
+            if (event.target.value === '') {
+                alert?.classList.add(ACTIVE_CLASS);
+            } else {
+                alert?.classList.remove(ACTIVE_CLASS);
+            }
+        });
+
+        input?.addEventListener('input', (event) => {
+            if (event.target.value === '') {
+                reset?.classList.remove(ACTIVE_CLASS);
+            } else {
+                reset?.classList.add(ACTIVE_CLASS);
+                alert?.classList.remove(ACTIVE_CLASS);
+            }
+        });
+
+        reset?.addEventListener('click', () => {
+            if (input) {
+                input.value = '';
+                reset?.classList.remove(ACTIVE_CLASS);
+            }
         });
     });
 })();

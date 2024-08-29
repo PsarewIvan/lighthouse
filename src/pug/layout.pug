@@ -9,8 +9,6 @@ html
         meta(content="index,follow", name="robots")
         title Lighthouse
         link(rel="stylesheet" href="css/index.css")
-        //- link(rel="stylesheet" href="libs/datepicker.css")
-        //- link(rel="stylesheet" href="libs/slimselect.css")
     body
         block header
             include includes/header.pug
@@ -19,4 +17,16 @@ html
 
         block footer
             include includes/footer.pug
+
+        block popup
+            include components/popup-auth.pug
+            include components/popup-forgot-pass.pug
+            include components/popup-login.pug
+            include components/popup-success.pug
+
+            +popup-auth()
+            +popup-forgot-pass()
+            +popup-login()
+            +popup-success()
+
     script(src="js/index.js")

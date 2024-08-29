@@ -1029,3 +1029,71 @@
 .accordion__item:not(.accordion__item_show) .accordion__body {
     display: none;
 }
+
+.form {
+    padding: 64px 0;
+    background-color: rgba(235, 242, 251, 1);
+
+    &__title {
+        margin: 0 auto 12px;
+        font-family: $montserrat;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 36px;
+        text-align: center;
+    }
+
+    &__subtitle {
+        margin: 0 auto 24px;
+        font-family: $montserrat;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 28px;
+        text-align: center;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+    }
+
+    &__list-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &__list-icon {
+        flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+
+        path {
+            fill: rgba(15, 158, 70, 1);
+        }
+    }
+}
+
+.index-form {
+    padding: 24px 0;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    &__input-tel {
+        width: 192px;
+    }
+
+    &__input-name {
+        width: 360px;
+    }
+
+    &__button {
+        width: 370px;
+    }
+}

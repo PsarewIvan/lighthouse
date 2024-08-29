@@ -47,4 +47,15 @@
             color: rgba(39, 42, 42, 1);
         }
     }
+
+    &.neutral {
+        border-color: rgba(39, 42, 42, 0.72);
+        color: rgba(39, 42, 42, 0.72);
+
+        &:hover:not(:disabled) {
+            background-color: rgba(39, 42, 42, 1);
+            border-color: rgba(39, 42, 42, 1);
+            color: rgba(255, 255, 255, 0.92);
+        }
+    }
 }

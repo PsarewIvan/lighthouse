@@ -4,7 +4,7 @@ block footer
 
     footer.footer
         .footer__wrapper
-            .footer__logo-block
+            a.footer__logo-block(href='/')
                 .footer__icon-wrapper
                     +icon-logo()
                     +icon-wazapa('footer__logo-text')
@@ -23,7 +23,7 @@ block footer
                 .footer__list
                     ul
                         li
-                            a(href="/") Оферта
+                            a(href="/oferta.html") Оферта
                         li
                             a(href="/") Реквизиты
                         li
@@ -31,6 +31,6 @@ block footer
                 .footer__list
                     ul
                         li
-                            a(href="/") +7 (977) 805 98 28
+                            a(href="tel:+79778059828") +7 (977) 805 98 28
                         li
-                            a(href="/") info@wazapa.ru
+                            a(href="mailto:info@wazapa.ru") info@wazapa.ru

@@ -1,0 +1,16 @@
+include ../icons/icon-eye-closed.pug
+include ../icons/icon-eye-open.pug
+
+mixin pass-input(label, alert, placeholder='', className='')
+    .pass-input.js-pass-input-node(class=className)
+        if label
+            .pass-input__label= label
+        .pass-input__input-wrapper
+            input.pass-input__input.js-pass-input(type="password" placeholder=placeholder)
+            button.pass-input__reset.js-pass-input-reset(type="button")
+                +icon-cross('pass-input__icon')
+            button.pass-input__show.js-pass-input-show(type="button")
+                +icon-eye-closed('pass-input__icon js-pass-input-icon-closed')
+                +icon-eye-open('pass-input__icon pass-input__icon_open js-pass-input-icon-open hidden')
+        if alert
+            .pass-input__alert.js-pass-input-alert= alert

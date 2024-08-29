@@ -3,11 +3,16 @@
 @import 'vars';
 
 @import './components/button';
+@import './components/text-input';
+@import './components/popup-auth';
+@import './components/pass-input';
+@import './components/checkbox';
 
 @import './includes/header';
 @import './includes/footer';
 
 @import './pages/index';
+@import './pages/oferta';
 
 * {
     box-sizing: border-box;
@@ -16,6 +21,7 @@
 html {
     -webkit-font-smoothing: antialiased;
     min-height: 100%;
+    scroll-behavior: smooth;
 }
 
 body {

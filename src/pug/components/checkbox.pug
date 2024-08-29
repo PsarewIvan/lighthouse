@@ -1,0 +1,13 @@
+include ../icons/icon-ok.pug
+
+mixin checkbox(className)
+    .checkbox-wrapper(class=className)
+        .checkbox
+            input(type="checkbox" id='checkbox-auth-oferta' name='auth-oferta' checked=false)
+            label.checkbox__label(for='checkbox-auth-oferta')
+                +icon-ok('checkbox__icon-ok')
+                div Я подтверждаю, что ознакомлен с условиями
+                a(href='/') Пользовательского соглашения
+                span  и 
+                a(href='/oferta.html') Оферты
+                .checkbox__alert Необходимо ваше подтверждение

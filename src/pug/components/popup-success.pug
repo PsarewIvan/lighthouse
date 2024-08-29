@@ -1,0 +1,19 @@
+include ../icons/icon-cross.pug
+include ../components/button.pug
+include ../components/text-input.pug
+
+mixin popup-success()
+    .popup-auth.hidden.js-popup-success
+        .popup-auth__box
+            .popup-auth__header
+                button.popup-auth__button.js-close-popup(type="button")
+                    +icon-cross('popup-auth__icon')
+            .popup-auth__content
+                .popup-auth__content-title Подключиться бесплатно
+                .popup-auth__content-text.success Ваш запрос успешно отправлен
+                .popup-auth__success-texts
+                    .popup-auth__success-text1 В ближайшее время мы позвоним по указанному вами номеру: +7 (000) 000-00-00
+                    .popup-auth__success-text2
+                        span Если вы ошиблись, указав неверный номер телефона, вы можете
+                        button.popup-auth__success-rebutton(type='button') отправить запрос повторно
+                    +button('Закрыть', 'm', 'neutral', 'popup-auth__success-close-button js-close-popup')

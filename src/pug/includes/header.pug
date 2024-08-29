@@ -1,21 +1,26 @@
 block header
     include ../icons/icon-logo.pug
     include ../icons/icon-wazapa.pug
+    include ../icons/icon-burger.pug
+    include ../icons/icon-cross.pug
     include ../components/button.pug
 
-    header.header
-        .header__logo-block
+    header.header.js-header
+        button.header-burger.js-header-burger(type='button')
+            +icon-burger('header-burger__icon burger')
+            +icon-cross('header-burger__icon cross')
+        a.header__logo-block(href='/')
             +icon-logo()
-            +icon-wazapa('header__logo-text')
-        nav.nav
+            +icon-wazapa('header__logo-icon-text')
+        nav.nav.js-nav
             ul.nav__list
                 li.nav__element
-                    a.nav__link(href='#') Команда
+                    a.nav__link(href='#command') Команда
                 li.nav__element
-                    a.nav__link(href='#') Функции
+                    a.nav__link(href='#functions') Функции
                 li.nav__element
-                    a.nav__link(href='#') Сообщения
+                    a.nav__link(href='#messages') Сообщения
                 li.nav__element
-                    a.nav__link(href='#') Цены
+                    a.nav__link(href='#prices') Цены
             a.nav__link(href='tel:+79778059828') +7 (977) 805 98 28
-        +button('Войти', 'l', 'secondary', 'header__auth')
+        +button('Войти', 'l', 'secondary', 'header__auth js-auth-button')

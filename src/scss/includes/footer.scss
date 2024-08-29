@@ -11,6 +11,19 @@
         padding: 24px;
         border-radius: 24px;
         background-color: rgba(39, 40, 42, 1);
+
+        @include tablet {
+            margin: 24px;
+            width: auto;
+        }
+
+        @include mobile {
+            flex-direction: column;
+            gap: 16px;
+            margin: 0;
+            padding: 16px;
+            border-radius: 0;
+        }
     }
 
     &__logo-block {
@@ -18,17 +31,40 @@
         display: flex;
         flex-direction: column;
         gap: 24px;
+
+        @include tablet {
+            flex-shrink: 0;
+        }
+
+        @include mobile {
+            padding-left: 0;
+            gap: 12px;
+        }
     }
 
     &__icon-wrapper {
         height: fit-content;
         display: flex;
         align-items: flex-end;
+
+        svg:nth-child(1) {
+            @include mobile {
+                width: 32px;
+                height: 32px;
+            }
+        }
     }
 
-    &__logo-text {
+    &__logo-icon-text {
         margin-left: 10px;
         margin-bottom: 5px;
+
+        @include mobile {
+            width: 80px;
+            height: 20px;
+            margin-left: 8px;
+            margin-bottom: 4px;
+        }
     }
 
     &__logo-text {
@@ -40,6 +76,12 @@
     &__nav-block {
         display: flex;
         gap: 48px;
+
+        @include tablet {
+            flex-direction: column;
+            width: 100%;
+            gap: 0;
+        }
     }
 
     &__list {
@@ -54,6 +96,10 @@
             gap: 12px;
             padding: 0;
             margin: 0;
+
+            @include tablet {
+                max-width: none;
+            }
         }
 
         a {

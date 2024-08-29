@@ -12,20 +12,124 @@
     padding: 16px 24px;
     background-color: #27282a;
 
+    @include tablet {
+        left: 24px;
+        right: 24px;
+        padding: 16px;
+        transform: none;
+    }
+
+    @include mobile {
+        top: 0;
+        left: 0;
+        right: 0;
+        transform: none;
+        padding: 16px 8px;
+        border-radius: 0;
+    }
+
     &__logo-block {
         height: fit-content;
         display: flex;
         align-items: flex-end;
+
+        svg:nth-child(1) {
+            width: 40px;
+            height: 40px;
+
+            @include mobile {
+                width: 32px;
+                height: 32px;
+            }
+        }
     }
 
-    &__logo-text {
+    &__logo-icon-text {
+        width: 100px;
+        height: 25px;
         margin-left: 10px;
         margin-bottom: 5px;
+
+        @include mobile {
+            width: 80px;
+            height: 20px;
+            margin-left: 8px;
+            margin-bottom: 4px;
+        }
     }
 
     &__auth {
         flex-shrink: 0;
         margin-left: 48px;
+
+        @include tablet {
+            margin-left: auto;
+        }
+    }
+}
+
+.header-burger {
+    display: none;
+    visibility: hidden;
+
+    &.open {
+        .header-burger__icon.burger {
+            display: none;
+        }
+
+        .header-burger__icon.cross {
+            display: block;
+        }
+    }
+
+    .header-burger__icon.cross {
+        display: none;
+    }
+
+    @include tablet {
+        visibility: visible;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        padding: 0;
+        margin: 0 24px 0 0;
+        border-radius: 12px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        transition: all 0.2s;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.04);
+
+            .header-burger__icon {
+                fill: rgba(255, 107, 0, 1);
+            }
+        }
+
+        &__icon {
+            width: 32px;
+            height: 32px;
+            fill: rgba(255, 255, 255, 0.72);
+            transition: fill 0.2s;
+        }
+    }
+
+    @include mobile {
+        position: relative;
+
+        &:not(.open):after {
+            content: '';
+            position: absolute;
+            right: 4px;
+            top: 4px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
     }
 }
 
@@ -35,11 +139,35 @@
     margin-left: 48px;
     padding-left: 48px;
 
+    @include tablet {
+        z-index: -1;
+        overflow: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        flex-direction: column;
+        width: auto;
+        margin-left: 0;
+        margin-bottom: 0;
+        padding: 136px 24px 24px;
+        background-color: rgba(39, 40, 42, 1);
+    }
+
+    @include mobile {
+        padding: 96px 16px 16px;
+    }
+
     &__list {
         display: flex;
         padding: 0;
         margin: 0;
         list-style: none;
+
+        @include tablet {
+            flex-direction: column;
+        }
     }
 
     &__element {

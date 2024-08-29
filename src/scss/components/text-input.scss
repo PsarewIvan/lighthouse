@@ -1,0 +1,117 @@
+.text-input {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    &__label {
+        margin-bottom: 4px;
+        margin-left: 4px;
+        color: rgba(39, 42, 42, 0.72);
+        font-family: $roboto;
+        font-size: 14px;
+        line-height: 20px;
+
+        // @include mobile {
+        //     margin-bottom: 8px;
+        //     font-size: 14px;
+        //     line-height: 20px;
+        // }
+    }
+
+    &__input-wrapper {
+        position: relative;
+    }
+
+    &__input {
+        width: 100%;
+        padding: 11px 12px;
+        border-radius: 12px;
+        border: 1px solid rgba(0, 0, 0, 0.24);
+        background: #fff;
+        color: rgba(39, 42, 42, 1);
+        font-family: $roboto;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        transition: all 0.2s;
+
+        // @include mobile {
+        //     padding: 9px 38px 9px 15px;
+        //     font-size: 16px;
+        //     line-height: 24px;
+        // }
+
+        &::placeholder {
+            color: rgba(39, 42, 42, 0.56);
+        }
+
+        &:hover {
+            border-color: rgba(39, 42, 42, 0.56);
+        }
+
+        &:focus {
+            outline: none;
+            border-color: rgba(11, 87, 208, 1);
+            padding-right: 32px;
+        }
+
+        // &:disabled {
+        //     border-color: rgba(0, 0, 0, 0.08);
+        //     background-color: rgba(0, 0, 0, 0.08);
+        // }
+
+        &.error {
+            border-color: rgba(224, 44, 44, 1);
+        }
+    }
+
+    &__reset {
+        display: none;
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
+        width: 16px;
+        height: 16px;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+
+        // @include mobile {
+        //     right: 12px;
+        //     bottom: 10px;
+        // }
+
+        &:hover {
+            svg {
+                fill: rgba(39, 42, 42, 1);
+            }
+        }
+
+        &.active {
+            display: flex;
+        }
+    }
+
+    &__icon {
+        fill: rgba(39, 42, 42, 0.56);
+        transition: all 0.2s;
+    }
+
+    &__alert {
+        display: none;
+        margin-top: 4px;
+        margin-left: 4px;
+        color: rgba(192, 32, 46, 1);
+        font-family: $roboto;
+        font-size: 14px;
+        line-height: 20px;
+
+        &.active {
+            display: block;
+        }
+    }
+}

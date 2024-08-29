@@ -1,0 +1,109 @@
+.checkbox-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+
+    input[type='checkbox'] {
+        display: none;
+
+        &:checked + label {
+            // color: rgba(32, 54, 91, 1);
+
+            &::before {
+                border-color: rgba(11, 87, 208, 1);
+                background-color: rgba(11, 87, 208, 1);
+            }
+
+            .checkbox__icon-ok {
+                opacity: 1;
+            }
+        }
+
+        &.error + label {
+            &::before {
+                border-color: rgba(192, 32, 46, 1);
+            }
+        }
+    }
+
+    &__label {
+        position: relative;
+        padding: 2px 0 2px 36px;
+        color: rgba(32, 54, 91, 1);
+        font-family: $roboto;
+        font-size: 16px;
+        line-height: 24px;
+        cursor: pointer;
+        user-select: none;
+        transition: color 0.2s;
+
+        a {
+            color: rgba(11, 87, 208, 1);
+            text-decoration: none;
+        }
+
+        // @include mobile {
+        //     padding-left: 36px;
+        //     font-size: 16px;
+        //     line-height: 24px;
+        // }
+
+        &:hover {
+            // color: #1f1f1f;
+
+            &::before {
+                // border-color: rgba(1, 144, 219, 1);
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 0, 0, 0.24);
+            background-color: white;
+            box-sizing: border-box;
+            transition: all 0.2s;
+        }
+    }
+
+    &__icon-ok {
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        width: 18px;
+        height: 18px;
+        fill: #fff;
+        opacity: 0;
+        transition: opacity 0.2s;
+    }
+
+    &__alert {
+        display: none;
+        margin-top: 4px;
+        margin-bottom: 2px;
+        font-family: $roboto;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: rgba(229, 24, 24, 1);
+    }
+
+    input.alert + label {
+        &::before {
+            border-color: rgba(224, 44, 44, 1);
+        }
+
+        .checkbox__alert {
+            display: block;
+        }
+    }
+}

@@ -98,7 +98,6 @@ class ItcAccordion {
 
 (() => {
     const accordions = document.querySelectorAll('.js-accordion');
-    console.log(accordions);
 
     accordions.forEach((accordion) => {
         new ItcAccordion(accordion, {

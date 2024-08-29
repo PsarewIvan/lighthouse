@@ -12,12 +12,14 @@ include ../icons/icon-step-arrow-1.pug
 include ../icons/icon-step-arrow-2.pug
 include ../icons/icon-question.pug
 include ../icons/icon-chevron.pug
+include ../icons/icon-ok.pug
 include ../components/button.pug
+include ../components/text-input.pug
 
 block content
         main.main
             .preview
-                .content.preview-content
+                .content.preview-content(id='command')
                     img.preview-content__img(src="../images/lighthouse.png")
                     .preview-content__content
                         .preview-content__list
@@ -27,7 +29,7 @@ block content
                             h1.preview-content__text-title Команда виртуальных помощников «Маяк»
                             span Увеличь прибыль без увеличения штата
                         .preview-content__footer
-                            +button('Подключи и протестируй бесплатно', 'l', 'primary', 'preview-content__footer-button')
+                            +button('Подключи и протестируй бесплатно', 'l', 'primary', 'preview-content__footer-button js-login-button')
                             .preview-content__footer-label 7 дней пробный период
                 .content.main-text Команда виртуальных помощников будет каждую секунду стоять на страже интересов вашего бизнеса, без отдыха работая над его процветанием
                 .content.messages
@@ -95,7 +97,7 @@ block content
                                 +icon-arrow-right('slider__controls-button-icon')
             .functions
                 .content
-                    .functions__title-block
+                    .functions__title-block(id='functions')
                         h2.functions__title Самые популярные функции
                         .functions__text Все помощники стоят на страже вашего бизнеса и при ситуациях тут же оповещают вас через Telegram
                         a.functions__link(href="/") Все функции помощников
@@ -123,11 +125,11 @@ block content
                                 span 4 750 ₽
                                 span 2500 ₽
                     .functions__buttons
-                        +button('Подключи и протестируй бесплатно', 'l', 'primary', 'functions__buttons-button')
+                        +button('Подключи и протестируй бесплатно', 'l', 'primary', 'functions__buttons-button js-login-button')
                         .functions__button-label 7 дней пробный период
 
             .phone
-                .content.phone__wrapper
+                .content.phone__wrapper(id='messages')
                     .phone__content
                         h2.phone__title Какие сообщения присылает команда?
                         ul.phone__list
@@ -158,7 +160,7 @@ block content
                     .phone__img-block.first
 
             .prices
-                .content.prices__wrapper
+                .content.prices__wrapper(id='prices')
                     h2.prices__title Сколько стоит работа команды?
                     .prices__sub-title Наши помощники не спят, им не нужен соц. пакет, корпоративные обеды, выходные и больничные
                     .prices__tabs.tabs
@@ -172,7 +174,7 @@ block content
                             span  в месяц
                         .prices__price-label оплата за год, всего 1200 рублей
                     .prices__buttons
-                        +button('Подключи и протестируй бесплатно', 'l', 'primary', 'prices__button')
+                        +button('Подключи и протестируй бесплатно', 'l', 'primary', 'prices__button js-login-button')
                         .prices__buttons-label 7 дней пробный период
                     h2.prices__title Быстрый старт в три шага
                     .prices__sub-title На знакомство с вашим бизнесом у команды уйдёт всего 5 минут
@@ -242,9 +244,21 @@ block content
                                 .accordion__body
                                     .accordion__content Наш сервис можно подключить в любой CRM-системе, так как мы обеспечиваем интеграцию с помощью API. Большинство популярных CRM имеют готовую интеграцию с нашим сервисом, но даже если ее нет, мы сможем помочь с подключением при наличии API у вашей CRM.
 
-            //- .form
-            //-     .content.form__wrapper
-            //-         h2.form__title Команда помощников готова к работе!
-            //-         .form__subtitle Семидневный пробный период позволит вам оценить все преимущества работы с помощниками
-            //-         form(action="")
-
+            .form
+                .content.form__wrapper
+                    h2.form__title Команда помощников готова к работе!
+                    .form__subtitle Семидневный пробный период позволит вам оценить все преимущества работы с помощниками
+                    form.index-form(action="")
+                        +text-input('', '', 'Телефон для связи', '', 'index-form__input-tel')
+                        +text-input('', '', 'Название организации', '', 'index-form__input-name')
+                        +button('Отправить заявку на подключение', 'm', 'primary', 'index-form__button')
+                    .form__list
+                        .form__list-item
+                            +icon-ok('form__list-icon')
+                            span Можно пользоваться сразу
+                        .form__list-item
+                            +icon-ok('form__list-icon')
+                            span Без предоплаты
+                        .form__list-item
+                            +icon-ok('form__list-icon')
+                            span Доступ ко всем функциям

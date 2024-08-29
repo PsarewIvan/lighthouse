@@ -10,7 +10,7 @@ $phone: 'screen and (max-width: 767px)';
 $smallphone: 'screen and (max-width: 340px)';
 
 @mixin tablet {
-    @media (max-width: 1055px) {
+    @media (max-width: 1199px) {
         @content;
     }
 }
