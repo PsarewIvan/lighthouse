@@ -184,6 +184,10 @@
 
         &.selected {
             border: 1px solid rgba(255, 107, 0, 1);
+
+            .messages__avatar-shadow {
+                display: block;
+            }
         }
     }
 
@@ -194,6 +198,7 @@
     }
 
     &__avatar-shadow {
+        display: none;
         position: absolute;
         left: -9px;
         top: -9px;
@@ -253,6 +258,10 @@
     border-radius: 24px;
     background-color: rgba(255, 255, 255, 1);
     box-shadow: 0 16px 64px 0 rgba(0, 0, 0, 0.08), 0 0 4px 0 rgba(0, 0, 0, 0.04);
+
+    &__wrapper {
+        margin-top: -72px;
+    }
 
     &__slide {
         display: flex;
@@ -326,7 +335,7 @@
             height: 20px;
         }
 
-        &.selected {
+        &.itc-slider-indicator-active {
             background-color: rgba(255, 107, 0, 1);
         }
     }
@@ -334,15 +343,16 @@
 
 .slide {
     &__img-block {
+        flex-shrink: 0;
         width: 192px;
-        min-height: 304px;
+        min-height: 376px;
         position: relative;
     }
 
     &__img {
         position: absolute;
         left: 0;
-        top: -72px;
+        top: 0;
         width: 192px;
         height: 376px;
     }
@@ -350,6 +360,7 @@
     &__content {
         display: flex;
         flex-direction: column;
+        margin-top: 72px;
     }
 
     &__title {

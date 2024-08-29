@@ -35,64 +35,106 @@ block content
                 .content.messages
                     +icon-circle-s('messages__circle-s')
                     +icon-circle-m('messages__circle-m')
-                    ul.messages__avatars-list
+                    ul.messages__avatars-list.js-slider-avatars
                         li.messages__avatar-element
-                            button.messages__avatar-button.selected
+                            button(type='button' data-slide-to="0").messages__avatar-button.js-slider-avatar.selected
                                 img.messages__avatar-img(src='../images/avatar-lookout.png')
                                 img.messages__avatar-shadow(src='../images/shadow-circle.png')
                         li.messages__avatar-element
-                            button.messages__avatar-button
+                            button(type='button' data-slide-to="1").messages__avatar-button.js-slider-avatar
                                 img.messages__avatar-img(src='../images/avatar-guardian.png')
-                                img.messages__avatar-shadow.hidden(src='../images/shadow-circle.png')
+                                img.messages__avatar-shadow(src='../images/shadow-circle.png')
                         li.messages__avatar-element
-                            button.messages__avatar-button
+                            button(type='button' data-slide-to="2").messages__avatar-button.js-slider-avatar
                                 img.messages__avatar-img(src='../images/avatar-builder.png')
-                                img.messages__avatar-shadow.hidden(src='../images/shadow-circle.png')
+                                img.messages__avatar-shadow(src='../images/shadow-circle.png')
                         li.messages__avatar-element
-                            button.messages__avatar-button
+                            button(type='button' data-slide-to="3").messages__avatar-button.js-slider-avatar
                                 img.messages__avatar-img(src='../images/avatar-analyst.png')
-                                img.messages__avatar-shadow.hidden(src='../images/shadow-circle.png')
+                                img.messages__avatar-shadow(src='../images/shadow-circle.png')
                         li.messages__avatar-element
-                            button.messages__avatar-button
+                            button(type='button' data-slide-to="4").messages__avatar-button.js-slider-avatar
                                 img.messages__avatar-img(src='../images/avatar-trainer.png')
-                                img.messages__avatar-shadow.hidden(src='../images/shadow-circle.png')
-                    ul.messages__buttons-list
+                                img.messages__avatar-shadow(src='../images/shadow-circle.png')
+                    ul.messages__buttons-list.js-slider-buttons
                         .messages__buttons-list-block
                             li.messages__button-element
-                                button.messages__button.selected Дозорный
+                                button(type='button' data-slide-to="0").messages__button.js-slider-button.selected Дозорный
                             li.messages__button-element
-                                button.messages__button Хранитель
+                                button(type='button' data-slide-to="1").messages__button.js-slider-button Хранитель
                         .messages__buttons-list-block
                             li.messages__button-element
-                                button.messages__button Строитель
+                                button(type='button' data-slide-to="2").messages__button.js-slider-button Строитель
                             li.messages__button-element
-                                button.messages__button Аналитик
+                                button(type='button' data-slide-to="3").messages__button.js-slider-button Аналитик
                             li.messages__button-element
-                                button.messages__button Тренер
-                    .slider
-                        .slider__slide
-                            .slide__img-block
-                                img.slide__img(src='images/characters-lookout.png')
-                            .slide__content
-                                .slide__title Дозорный
-                                .slide__sub-title Мониторит текущие события и мгновенно оповестит вас, если:
-                                ul.slide__list
-                                    li.slide__list-element Сотрудник отменит запись без перезаписи клиента на другое время
-                                    li.slide__list-element Клиент отменит запись без переноса на другое время
-                                    li.slide__list-element Сотрудник откроет ранее оформленный визит
-                                    li.slide__list-element Сотрудник изменит стоимость, состав услуг или товаров в визите
-                                    li.slide__list-element При получении отрицательного отзыва
+                                button(type='button' data-slide-to="4").messages__button.js-slider-button Тренер
+
+                    .slider.itc-slider
+                        .slider__wrapper.itc-slider-wrapper
+                            .itc-slider-items
+                                .slider__slide.itc-slider-item
+                                    .slide__img-block
+                                        img.slide__img(src='images/characters-lookout.png')
+                                    .slide__content
+                                        .slide__title Дозорный
+                                        .slide__sub-title Мониторит текущие события и мгновенно оповестит вас, если:
+                                        ul.slide__list
+                                            li.slide__list-element Сотрудник отменит запись без перезаписи клиента на другое время
+                                            li.slide__list-element Клиент отменит запись без переноса на другое время
+                                            li.slide__list-element Сотрудник откроет ранее оформленный визит
+                                            li.slide__list-element Сотрудник изменит стоимость, состав услуг или товаров в визите
+                                            li.slide__list-element При получении отрицательного отзыва
+                                .slider__slide.itc-slider-item
+                                    .slide__img-block
+                                        img.slide__img(src='images/characters-guardian.png')
+                                    .slide__content
+                                        .slide__title Хранитель
+                                        .slide__sub-title Охраняет вашу кассу и мгновенно оповестит вас, если:
+                                        ul.slide__list
+                                            li.slide__list-element Сотрудник не напечатает чек
+                                            li.slide__list-element Сотрудник отменит ранее пробитый чек
+                                            li.slide__list-element Сотрудник в назначенное время не снимет Z-отчёт
+                                .slider__slide.itc-slider-item
+                                    .slide__img-block
+                                        img.slide__img(src='images/characters-builder.png')
+                                    .slide__content
+                                        .slide__title Строитель
+                                        .slide__sub-title Работает над увеличением записей в будущем и над эффективным ведением базы. Он сообщит вам, если:
+                                        ul.slide__list
+                                            li.slide__list-element При оформлении визита сотрудник забудет установить напоминание «Пора записаться снова»
+                                            li.slide__list-element Сотрудник создаст запись не указав номер телефона клиента
+                                            li.slide__list-element Сотрудник создаст запись без указания услуг
+                                            li.slide__list-element Сотрудник продаст товар не указав номер телефона клиента
+                                .slider__slide.itc-slider-item
+                                    .slide__img-block
+                                        img.slide__img(src='images/characters-analyst.png')
+                                    .slide__content
+                                        .slide__title Аналитик
+                                        .slide__sub-title Анализирует  работу салона и:
+                                        ul.slide__list
+                                            li.slide__list-element Записывает все данные о работе салона за день в отчётные таблицы
+                                            li.slide__list-element Каждый вечер присылает вам отчёт с результатами работы
+                                .slider__slide.itc-slider-item
+                                    .slide__img-block
+                                        img.slide__img(src='images/characters-trainer.png')
+                                    .slide__content
+                                        .slide__title Тренер
+                                        .slide__sub-title Заботится о развитии вашего бизнеса и улучшении показателей:
+                                        ul.slide__list
+                                            li.slide__list-element Используя данные Аналитика составит план для улучшения показателей
+                                            li.slide__list-element Даёт советы по выполнению плана и сопровождает вас на пути к успеху
                         .slider__controls
-                            button.slider__controls-button(type='button')
+                            button.slider__controls-button.itc-slider-btn.itc-slider-btn-prev(type='button')
                                 +icon-arrow-left('slider__controls-button-icon')
                                 span Тренер
-                            .slider__pagination
-                                button(type='').slider__pagination-item.selected
-                                button(type='').slider__pagination-item
-                                button(type='').slider__pagination-item
-                                button(type='').slider__pagination-item
-                                button(type='').slider__pagination-item
-                            button.slider__controls-button(type='button')
+                            .slider__pagination.itc-slider-indicators
+                                button(type='button' data-slide-to="0").slider__pagination-item.itc-slider-indicator
+                                button(type='button' data-slide-to="1").slider__pagination-item.itc-slider-indicator
+                                button(type='button' data-slide-to="2").slider__pagination-item.itc-slider-indicator
+                                button(type='button' data-slide-to="3").slider__pagination-item.itc-slider-indicator
+                                button(type='button' data-slide-to="4").slider__pagination-item.itc-slider-indicator
+                            button.slider__controls-button.itc-slider-btn.itc-slider-btn-next(type='button')
                                 span Хранитель
                                 +icon-arrow-right('slider__controls-button-icon')
             .functions

@@ -78,7 +78,6 @@ function styles() {
         .pipe(server.stream());
 }
 
-// Объединение и минификация JS
 function libs() {
     return gulp
         .src(paths.libs.src)
@@ -130,6 +129,7 @@ function watch() {
     gulp.watch(paths.pug.watch, html);
     gulp.watch(paths.styles.watch, styles);
     gulp.watch(paths.scripts.watch, scripts);
+    gulp.watch(paths.libs.watch, libs);
 }
 
 export const start = gulp.series(libs, html, styles, scripts, watch);
