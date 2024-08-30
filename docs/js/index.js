@@ -468,6 +468,15 @@ class ItcAccordion {
         const avatarsButtons =
             avatarsList?.querySelectorAll('.js-slider-avatar');
         const buttons = buttonsList?.querySelectorAll('.js-slider-button');
+        const prevButtonText = sliderElement?.querySelector(
+            '.js-slider-control-button-text-prev'
+        );
+        const nextButtonText = sliderElement?.querySelector(
+            '.js-slider-control-button-text-next'
+        );
+        const names = Array.from(
+            sliderElement?.querySelectorAll('.js-slider-title')
+        )?.map((element) => element.innerHTML);
 
         function onSlideChange(index) {
             const currentAvatar = avatarsButtons?.[index];
@@ -478,6 +487,20 @@ class ItcAccordion {
 
             addSelected(currentAvatar);
             addSelected(currentButton);
+
+            const nextIndex = index < buttons.length - 1 ? index + 1 : 0;
+            const prevIndex = index < 1 ? buttons.length - 1 : index - 1;
+
+            const nextText = names[nextIndex];
+            const prevText = names[prevIndex];
+
+            if (nextButtonText) {
+                nextButtonText.innerHTML = nextText;
+            }
+
+            if (prevButtonText) {
+                prevButtonText.innerHTML = prevText;
+            }
         }
 
         const slider = ItcSlider.getOrCreateInstance(sliderElement, {

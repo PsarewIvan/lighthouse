@@ -78,7 +78,7 @@ block content
                                         img.slide__img(src='images/characters-lookout.png')
                                         img.slide__img-mobile(src='images/avatar-lookout.png')
                                     .slide__content
-                                        .slide__title Дозорный
+                                        .slide__title.js-slider-title Дозорный
                                         .slide__sub-title Мониторит текущие события и мгновенно оповестит вас, если:
                                         ul.slide__list
                                             li.slide__list-element Сотрудник отменит запись без перезаписи клиента на другое время
@@ -91,7 +91,7 @@ block content
                                         img.slide__img(src='images/characters-guardian.png')
                                         img.slide__img-mobile(src='images/avatar-guardian.png')
                                     .slide__content
-                                        .slide__title Хранитель
+                                        .slide__title.js-slider-title Хранитель
                                         .slide__sub-title Охраняет вашу кассу и мгновенно оповестит вас, если:
                                         ul.slide__list
                                             li.slide__list-element Сотрудник не напечатает чек
@@ -102,7 +102,7 @@ block content
                                         img.slide__img(src='images/characters-builder.png')
                                         img.slide__img-mobile(src='images/avatar-builder.png')
                                     .slide__content
-                                        .slide__title Строитель
+                                        .slide__title.js-slider-title Строитель
                                         .slide__sub-title Работает над увеличением записей в будущем и над эффективным ведением базы. Он сообщит вам, если:
                                         ul.slide__list
                                             li.slide__list-element При оформлении визита сотрудник забудет установить напоминание «Пора записаться снова»
@@ -114,7 +114,7 @@ block content
                                         img.slide__img(src='images/characters-analyst.png')
                                         img.slide__img-mobile(src='images/avatar-analyst.png')
                                     .slide__content
-                                        .slide__title Аналитик
+                                        .slide__title.js-slider-title Аналитик
                                         .slide__sub-title Анализирует  работу салона и:
                                         ul.slide__list
                                             li.slide__list-element Записывает все данные о работе салона за день в отчётные таблицы
@@ -124,7 +124,7 @@ block content
                                         img.slide__img(src='images/characters-trainer.png')
                                         img.slide__img-mobile(src='images/avatar-trainer.png')
                                     .slide__content
-                                        .slide__title Тренер
+                                        .slide__title.js-slider-title Тренер
                                         .slide__sub-title Заботится о развитии вашего бизнеса и улучшении показателей:
                                         ul.slide__list
                                             li.slide__list-element Используя данные Аналитика составит план для улучшения показателей
@@ -132,7 +132,7 @@ block content
                         .slider__controls
                             button.slider__controls-button.itc-slider-btn.itc-slider-btn-prev(type='button')
                                 +icon-arrow-left('slider__controls-button-icon')
-                                span Тренер
+                                span.js-slider-control-button-text-prev Тренер
                             .slider__pagination.itc-slider-indicators
                                 button(type='button' data-slide-to="0").slider__pagination-item.itc-slider-indicator
                                 button(type='button' data-slide-to="1").slider__pagination-item.itc-slider-indicator
@@ -140,7 +140,7 @@ block content
                                 button(type='button' data-slide-to="3").slider__pagination-item.itc-slider-indicator
                                 button(type='button' data-slide-to="4").slider__pagination-item.itc-slider-indicator
                             button.slider__controls-button.itc-slider-btn.itc-slider-btn-next(type='button')
-                                span Хранитель
+                                span.js-slider-control-button-text-next Хранитель
                                 +icon-arrow-right('slider__controls-button-icon')
             .functions
                 .content
